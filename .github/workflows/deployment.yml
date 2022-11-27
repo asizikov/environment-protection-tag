@@ -11,8 +11,8 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: dev
+    environment: production
 
     steps:
       - name: Run a one-line script
-        run: echo Deploy me
+        run: echo 'deployment to production'
