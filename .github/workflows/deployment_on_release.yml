@@ -1,0 +1,14 @@
+# trigger workflow on release with tag name pattern
+name: ⚙️ deployment on release created
+on: 
+  release:
+    types: [published]
+    tags:
+      - 'release_*'
+workflows:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: ▶️ Run a one-line script
+        run: echo 'deployment to production'
