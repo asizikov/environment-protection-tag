@@ -3,9 +3,8 @@ name: ⚙️ deployment on release created
 on: 
   release:
     types: [published]
-    tags:
-      - 'release_*'
 jobs:
+  if: github.event.release.tag_name == 'release_*'
   deployment:
     runs-on: ubuntu-latest
     environment: production
